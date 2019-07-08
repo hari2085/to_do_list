@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Todo</title>
+
+</head>
+
+<body>
+	<a href="/add">Add Todo</a>
+	<br>
+	<br>
+	
+	<table>
+		<thead>
+			<th style="padding-right: 20px;">Id</th>
+			<th style="padding-right: 20px;">Title</th>
+			<th style="padding-right: 20px;">Description</th>
+			<th style="padding-right: 20px;">Status</th>
+			<th style="padding-right: 20px;">Delete</th>
+			<th style="padding-right: 20px;">Edit</th>
+		</thead>
+		<tbody>
+	{% for todo in todos %}
+		<tr>
+			<td style="padding-right: 20px;">{{todo.id}}</td>
+			<td style="padding-right: 20px;">{{todo.title}}</td>
+			<td style="padding-right: 20px;">{{todo.description}}</td>
+			<td style="padding-right: 20px;">{{todo.status}}</td>
+			<td style="padding-right: 20px;"><a href='{% url 'delete' todo.id %}'>Delete</a></td>
+			<td style="padding-right: 20px;"><a href='{% url 'edit' todo.id %}'>Edit</a></td>
+
+		</tr>
+	{% endfor %}
+		</tbody>
+	</table>
+	
+	
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Edit</title>
+
+</head>
+
+<body>
+    
+	<form method="post" novalidate>
+  {% csrf_token %}
+  Title:
+  <input  type="text" name="title" class="form-control" value="{{edit_obj.title}}">
+  <br>
+  <br>
+
+  Description:
+  <input  type="text" name="description" class="form-control" value="{{edit_obj.description}}">
+  <br>
+  <br>
+  Status: 
+  {% if edit_obj.status == 'in_progress' %}
+  <select name="status" >
+  <option value="in_progress" selected>In Progress</option>
+  <option value="completed">Completed</option>
+  <option value="pending">Pending</option>
+</select>
+{% endif %}
+{% if edit_obj.status == 'completed' %}
+  <select name="status" >
+  <option value="in_progress" >In Progress</option>
+  <option value="completed" selected>Completed</option>
+  <option value="pending">Pending</option>
+</select>
+{% endif %}
+{% if edit_obj.status == 'pending' %}
+  <select name="status" >
+  <option value="in_progress" >In Progress</option>
+  <option value="completed">Completed</option>
+  <option value="pending" selected>Pending</option>
+</select>
+{% endif %}
+<br>
+<br>
+  <button type="submit">Submit</button>
+</form>
+
+
+</body>
+</html>
