@@ -33,3 +33,15 @@ http://localhost:8000/api/todo/list
 http://localhost:8000/api/todo/<id> 
 ``` 
 to show all the details one todo
+
+# Admin Integration
+
+use the following command to create a super user
+```
+python manage.py createsuperuser
+```
+To login to admin use following link
+```
+http://localhost:8000/admin
+```
+To export the todos you can find the export option at right top of the todos list
