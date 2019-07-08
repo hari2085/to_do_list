@@ -16,11 +16,20 @@ python manage.py runserver
 ```
 
 The links for the the app are
-
-http://localhost:8000/  for the list of all todos
-http://localhost:8000/add  to add a todo
+```
+http://localhost:8000/ 
+```
+for the list of all todos
+```
+http://localhost:8000/add 
+```
+to add a todo
 
 The APi endpoints to list all the todos is
-
-http://localhost:8000/api/todo/list
-http://localhost:8000/api/todo/<id>  to show all the details one todo
+```
+http://localhost:8000/api/todo/list 
+```
+```
+http://localhost:8000/api/todo/<id> 
+``` 
+to show all the details one todo
